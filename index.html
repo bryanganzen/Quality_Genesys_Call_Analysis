@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Proceso de Transcripción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #f15a22;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        select, input[type="text"], input[type="submit"] {
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #f15a22;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #d94a1f;
+        }
+        .logo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 40%;
+            height: auto;
+        }
+        #processingMessage {
+            display: none;
+            color: #f15a22;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .error-message {
+            color: red;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function showProcessingMessage() {
+            document.getElementById('processingMessage').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="logo">
+        <img src="url del logo a utilizar en front" alt="nombre">
+    </div>
+    <div class="container">
+        <h1>Análisis de Conversación</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="error-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('process_data') }}" method="post" onsubmit="showProcessingMessage()">
+            <select name="organization">
+                <option value="null">Selecciona la Organización</option>
+                <option value="organización1">organización1</option>
+                <option value="organización2">organización2</option>
+            </select>
+            <input type="text" name="conversation_id" placeholder="Ingresa el ID de la conversación" />
+            <input type="submit" value="Iniciar Análisis" />
+        </form>
+        <p id="processingMessage">El análisis está en proceso, por favor espera...</p>
+    </div>
+</body>
+</html>

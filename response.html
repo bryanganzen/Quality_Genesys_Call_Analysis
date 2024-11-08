@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Análisis de la Conversación</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .logo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 40%;
+            height: auto;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        h1 {
+            color: #f15a22;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .respuesta {
+            background-color: #fcfcfc;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            word-wrap: break-word;
+            margin-top: 20px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .respuesta ul, .respuesta ol {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        .respuesta li {
+            margin-bottom: 8px;
+        }
+        .respuesta strong {
+            font-weight: bold;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f15a22;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: #d94a1f;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .container {
+                padding: 15px;
+            }
+            .respuesta {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="url del logo a utilizar en front" alt="nombre">
+    </div>
+
+    <div class="container">
+        <h1>Análisis de la Conversación</h1>
+        <p><strong>Asesor Educativo:</strong> {{ user_name }}</p>
+        <div class="respuesta">
+            {{ respuesta|safe }}
+        </div>
+        <div class="button-container">
+            <a href="{{ url_for('download_audio', conversation_id=conversation_id) }}">Descargar Audio</a>
+        </div>
+        <div class="button-container">
+            <a href="{{ url_for('index') }}">Volver</a>
+        </div>
+    </div>
+</body>
+</html>
