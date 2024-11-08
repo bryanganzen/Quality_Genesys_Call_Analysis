@@ -82,3 +82,10 @@ python quality.py
 - **Audio:** Los archivos de audio descargados se almacenan en la carpeta audios y están en formato `.WAV`.
   - **NOTA: Se puede modificar el formato por `.MP3`**
 - **Respuesta HTML:** La respuesta en formato Markdown se convierte a `HTML` y se presenta en la página web.
+
+## Contacto
+
+Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto.
+
+- Bryan Ganzen
+- 55 75 45 65 81
