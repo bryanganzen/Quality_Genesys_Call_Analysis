@@ -40,11 +40,11 @@ pip install requests flask openai markdown
 ## Configuración de Variables
 
 1. **API Key de OpenAI:**
-- Agrega tu API key de OpenAI en la inicialización del cliente de OpenAI.
-2. **Assistant ID:**
-- Define el ID del asistente en la variable assistant_id.
+   - Agrega tu API key de OpenAI en la inicialización del cliente de OpenAI.
+3. **Assistant ID:**
+   - Define el ID del asistente en la variable assistant_id.
 3. **URLs y Hosts de Genesys:**
-- Configura las URLs para obtener el token y los hosts de acuerdo a la organización (organización1 o organización2).
+   - Configura las URLs para obtener el token y los hosts de acuerdo a la organización (organización1 o organización2).
 
 ## Ejecución
 
