@@ -60,25 +60,25 @@ python quality.py
 
 ## Endpoints
 
-1. **/:**
+1. `/`:
     - Página principal donde se puede ingresar la organización y el ID de conversación.
-3. **/process_data:**
+3. `/process_data`:
     - Endpoint que procesa los datos ingresados, obteniendo la grabación, transcribiéndola y enviándola al asistente.
-4. **/download_audio/<conversation_id>:**
+4. `/download_audio/<conversation_id>`:
     - Endpoint para descargar el archivo de audio en formato .WAV de la conversación especificada.
 
 ## Estructura del Código
 
 - **obtener_token_de_acceso:** Obtiene el token de acceso de la URL configurada.
 - **obtener_recording:** Recupera los metadatos de grabación de una conversación específica.
-- **obtener_detalles_recording:** Obtiene el mediaUri y el nombre del usuario de una grabación.
-- **descargar_audio:** Descarga el archivo de audio usando el mediaUri.
+- **obtener_detalles_recording:** Obtiene el `mediaUri` y el nombre del usuario de una grabación.
+- **descargar_audio:** Descarga el archivo de audio usando el `mediaUri`.
 - **transcribir_audio:** Transcribe el archivo de audio descargado.
 - **enviar_al_asistente:** Envía la transcripción al asistente de OpenAI y recupera la respuesta.
 - **limpiar_referencias:** Elimina referencias innecesarias del texto de la respuesta usando expresiones regulares.
 
 ## Archivos de Salida
 
-- **Audio:** Los archivos de audio descargados se almacenan en la carpeta audios y están en formato .WAV.
-  - **NOTA: Se puede modificar el formato por .MP3**
-- **Respuesta HTML:** La respuesta en formato Markdown se convierte a HTML y se presenta en la página web.
+- **Audio:** Los archivos de audio descargados se almacenan en la carpeta audios y están en formato `.WAV`.
+  - **NOTA: Se puede modificar el formato por `.MP3`**
+- **Respuesta HTML:** La respuesta en formato Markdown se convierte a `HTML` y se presenta en la página web.
