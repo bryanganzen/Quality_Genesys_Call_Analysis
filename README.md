@@ -44,7 +44,7 @@ pip install requests flask openai markdown
 2. **Assistant ID:**
 - Define el ID del asistente en la variable assistant_id.
 3. **URLs y Hosts de Genesys:**
--Configura las URLs para obtener el token y los hosts de acuerdo a la organización (organización1 o organización2).
+- Configura las URLs para obtener el token y los hosts de acuerdo a la organización (organización1 o organización2).
 
 ## Ejecución
 
